@@ -17,7 +17,12 @@ namespace ECommerce.Application.Services.Order.CreateOrder
             var orderEntity = new Entities.Order(
                 orderName
             );
+            var oldOrder = await orderRepository.GetOrderAsync(orderName);
 
+            if (oldOrder != null)
+            {
+                throw new InvalidOperationException($"Order with name '{orderName}' already exists.");
+            }
             var order = await orderRepository.CreateOrderAsync(orderEntity);
 
             return (order != null && order.Id > 0);
