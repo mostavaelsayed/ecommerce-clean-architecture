@@ -12,11 +12,7 @@ namespace ECommerce.DataPersistence
             string connString = configuration.GetConnectionString("DefaultConnection")!;
 
             services.AddDbContext<OrderContext>((_, options) => { 
-                options.UseSqlServer(connString, providerOptions =>
-                {
-                    providerOptions.EnableRetryOnFailure();
-                    providerOptions.UseCompatibilityLevel(100);
-                });
+                options.UseSqlServer(connString);
             });
    
 
