@@ -17,6 +17,7 @@ namespace ECommerce.DataPersistence.Repositories
         {
             var orderModel = new Order(order.Name);
             await context.Orders.AddAsync(orderModel);
+            await context.SaveChangesAsync();
             return orderModel;
         }
     }
