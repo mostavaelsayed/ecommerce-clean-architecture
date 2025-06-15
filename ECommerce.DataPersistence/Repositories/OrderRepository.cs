@@ -20,5 +20,10 @@ namespace ECommerce.DataPersistence.Repositories
             await context.SaveChangesAsync();
             return orderModel;
         }
+
+        public Task<Order?> GetOrderAsync(string name)
+        {
+            return context.Orders.FirstOrDefaultAsync(o => o.Name == name);
+        }
     }
 }
