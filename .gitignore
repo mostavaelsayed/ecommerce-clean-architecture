@@ -52,3 +52,12 @@ CodeCoverage/
 *.VisualState.xml
 TestResult.xml
 nunit-*.xml
+/.vs/ECommerceCleanArchitecture/copilot-chat
+/.vs/ECommerceCleanArchitecture/CopilotIndices
+/.vs/ECommerceCleanArchitecture/FileContentIndex
+/.vs/ECommerceCleanArchitecture/DesignTimeBuild
+.vs/ECommerceCleanArchitecture/v17/.futdcache.v2
+.vs/ECommerceCleanArchitecture/v17/.suo
+.vs/ECommerceCleanArchitecture/v17/DocumentLayout.backup.json
+.vs/ECommerceCleanArchitecture/config/applicationhost.config
+/.vs
