@@ -1,3 +1,4 @@
+using ECommerce.Application.Commands.Order;
 using ECommerce.Application.Services.Order.CreateOrder;
 using Microsoft.AspNetCore.Mvc;
 
@@ -18,9 +19,9 @@ namespace ECommerceCleanArchitecture.Web.Controllers
         }
 
         [HttpPost]
-        public async Task<bool> CreateOrder([FromBody]string orderName)
+        public async Task<CreateOrderResponse> CreateOrder([FromBody] CreateOrderRequest request)
         {
-            var result = await createOrderService.CreateOrderAsync(orderName);
+            var result = await createOrderService.CreateOrderAsync(request);
             return result;
         }
     }

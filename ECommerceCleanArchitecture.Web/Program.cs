@@ -1,21 +1,15 @@
-using ECommerce.Application.Repositories;
-using ECommerce.Application.Services.Order.CreateOrder;
+using ECommerce.Application;
 using ECommerce.DataPersistence;
-using ECommerce.DataPersistence.Repositories;
-using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-
-//add in sql database
 builder.Services.RegisterOrdersContext(builder.Configuration);
 
+builder.Services.RegisterRepositories();
 
-builder.Services.AddScoped<IOrderRepository, OrderRepository>();
-
-builder.Services.AddScoped<ICreateOrderService, CreateOrderService>();
+builder.Services.RegisterApplicationServices();
 
 
 //add swagger support
