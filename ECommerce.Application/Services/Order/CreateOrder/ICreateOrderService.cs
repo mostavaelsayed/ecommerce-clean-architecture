@@ -1,7 +1,9 @@
-﻿namespace ECommerce.Application.Services.Order.CreateOrder
+﻿using ECommerce.Application.Commands.Order;
+
+namespace ECommerce.Application.Services.Order.CreateOrder
 {
     public interface ICreateOrderService
     {
-        Task<bool> CreateOrderAsync(string orderName);
+        public Task<CreateOrderResponse> CreateOrderAsync(CreateOrderRequest request);
     }
 }

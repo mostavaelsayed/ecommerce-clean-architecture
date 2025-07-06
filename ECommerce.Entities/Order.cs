@@ -3,14 +3,15 @@
     public class Order
     {
 
-        public Order(string name)
+        public Order()
         {
-            if (string.IsNullOrWhiteSpace(name)) throw new ArgumentException("Order name cannot be empty.", nameof(name));
-            if (name.Length>50) throw new ArgumentException("Order name cannot be longer than 50 characters.", nameof(name));
-            this.Name = name;
         }
         public int Id { get; set; }
-        public string Name { get; set; }
+        public int UserId { get; set; }
+        public int PaymentId { get; set; }
+        public DateTime OrderDate { get; set; }
+        public string Status { get; set; }
+        public decimal TotalAmount { get; set; }
 
     }
 }
