@@ -1,6 +1,8 @@
 ﻿using ECommerce.Application.Repositories.Read;
 using ECommerce.DataPersistence.Context;
 using ECommerce.Entities;
+using ECommerce.Entities.Aggregates.ProductAggregate;
+using Microsoft.EntityFrameworkCore;
 
 namespace ECommerce.DataPersistence.Repositories
 {
@@ -13,9 +15,9 @@ namespace ECommerce.DataPersistence.Repositories
             this.context = context;
         }
 
-        public async Task<Product> GetByIdAsync(int id)
+        public async Task<List<Product>> GetAllByIdAsync(List<int> ids)
         {
-            return await context.Products.FindAsync(id);
+            return await context.Products.Where(p => ids.Contains(p.Id)).ToListAsync();
         }
     }
 }

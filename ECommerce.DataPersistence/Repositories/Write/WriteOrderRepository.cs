@@ -1,6 +1,7 @@
 ﻿using ECommerce.Application.Repositories.Write;
 using ECommerce.DataPersistence.Context;
 using ECommerce.Entities;
+using ECommerce.Entities.Aggregates.OrderAggregate;
 
 namespace ECommerce.DataPersistence.Repositories.Write
 {
@@ -15,8 +16,7 @@ namespace ECommerce.DataPersistence.Repositories.Write
 
         public async Task<Order> AddAsync(Order order)
         {
-            context.Orders.Add(order);
-            await context.SaveChangesAsync();
+            await context.Orders.AddAsync(order);
             return order;
         }
     }

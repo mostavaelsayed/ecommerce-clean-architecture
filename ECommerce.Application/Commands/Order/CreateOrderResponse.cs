@@ -1,6 +1,6 @@
 ﻿namespace ECommerce.Application.Commands.Order
 {
-    public class CreateOrderResponse
+    public class CreateOrderResponseDTO
     {
         public int OrderId { get; set; }
         public DateTime OrderDate { get; set; }

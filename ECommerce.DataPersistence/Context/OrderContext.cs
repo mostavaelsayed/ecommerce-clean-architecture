@@ -1,4 +1,6 @@
-﻿using ECommerce.Entities;
+﻿using ECommerce.Entities.Aggregates.OrderAggregate;
+using ECommerce.Entities.Aggregates.ProductAggregate;
+using ECommerce.Entities.Aggregates.UserAggregate;
 using Microsoft.EntityFrameworkCore;
 
 namespace ECommerce.DataPersistence.Context

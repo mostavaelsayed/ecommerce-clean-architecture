@@ -1,4 +1,5 @@
 ﻿using ECommerce.Entities;
+using ECommerce.Entities.Aggregates.UserAggregate;
 
 namespace ECommerce.Application.Repositories.Read
 {

@@ -1,13 +1,15 @@
-﻿namespace ECommerce.Application.Commands.Order
+﻿using ECommerce.Entities.Constants;
+
+namespace ECommerce.Application.Commands.Order
 {
-    public class CreateOrderRequest
+    public class CreateOrderRequestDTO
     {
         public int UserId { get; set; }
-        public List<CreateOrderItemRequest> Items { get; set; }
-        public string PaymentMethod { get; set; }
+        public List<CreateOrderItemRequestDTO> Items { get; set; }
+        public PaymentMethodEnum PaymentMethod { get; set; }
     }
 
-    public class CreateOrderItemRequest
+    public class CreateOrderItemRequestDTO
     {
         public int ProductId { get; set; }
         public int Quantity { get; set; }

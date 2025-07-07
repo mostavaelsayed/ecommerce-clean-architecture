@@ -1,4 +1,4 @@
-﻿using ECommerce.Entities;
+﻿using ECommerce.Entities.Aggregates.OrderAggregate;
 
 namespace ECommerce.Application.Repositories.Write
 {
