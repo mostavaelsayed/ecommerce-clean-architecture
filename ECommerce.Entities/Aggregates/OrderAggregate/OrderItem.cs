@@ -17,7 +17,7 @@ namespace ECommerce.Entities.Aggregates.OrderAggregate
         public static OrderItem Create(int productId, string productName, int quantity, decimal price)
         {
             if (quantity <= 0)
-                throw new ArgumentException("Quantity must be positive.");
+                throw new InvalidOperationException("Quantity must be positive.");
 
             return new OrderItem()
             {

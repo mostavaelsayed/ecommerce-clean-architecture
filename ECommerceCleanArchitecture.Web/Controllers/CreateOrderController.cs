@@ -32,6 +32,7 @@ namespace ECommerceCleanArchitecture.Web.Controllers
                 _logger.LogInformation("start create order");
                 var result = await createOrderService.CreateOrderAsync(new CreateOrderRequestDTO()
                 {
+                    UserId = request.UserId,
                     Items = request.Items.Select(o => new CreateOrderItemRequestDTO() { ProductId = o.ProductId, Quantity = o.Quantity }).ToList(),
                     PaymentMethod = (PaymentMethodEnum)request.PaymentMethodId
                 });
